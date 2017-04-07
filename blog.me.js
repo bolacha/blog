@@ -55,9 +55,9 @@ if(process.argv[2] == 'new') {
 		return Number(file.substr(0, file.indexOf('.')) );
 	}).sort().reverse().slice(0, number_of_last_posts);
 
-	logger.write('Last Posts \n');
+	logger.write('# Last Posts \n');
 
-	last_files.forEach((file) => {
-		logger.write("["+new Date(file)+"]( "+'old_posts/'+file+ '.md'+" ) \n");
+	last_files.forEach((file , index) => {
+		logger.write(index + ". Post ["+new Date(file)+"]( "+'old_posts/'+file+ '.md'+" ) \n");
 	})
 }
